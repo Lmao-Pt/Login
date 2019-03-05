@@ -1,0 +1,219 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <meta name="keywords" content="关键词">
+        <meta name="description" content="描述">
+        <meta name="author" content="Pt">
+        <style>
+            body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+            ol,ul,li{margin:0;padding:0;list-style:none;}
+            img{border:none;}
+            body {
+                height: 100%;
+                background: url("1.jpg") no-repeat ;
+                background-size: 100% 100%;
+            }
+            a {
+                text-decoration: none;
+            }
+            #wrap {
+                position: relative;
+                width: 100%;
+                height: 728px;
+
+            }
+            #shadow {
+                display: none;
+                position: absolute;
+                top: 0; left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgb(205, 205, 205,0.4);
+            }
+            #wrap #nav_top {
+                width: 100%;
+                height: 60px;
+                background: rgba(250, 255, 106, 0.3);
+            }
+            #nav_top .logo {
+                float: left;
+                margin-left: 40px;
+                width: 60px;
+                height: 60px;
+                background: #35cdc5;
+            }
+            #nav_top .login {
+                display: block;
+                float: right;
+                margin: 10px 60px 0 0;
+                width: 100px;
+                height: 40px;
+                background: rgb(44,197,254);
+                font-size: 18px;
+                font-weight: 400;
+                color: #ffffff;
+                text-align: center;
+                line-height: 40px;
+                border-radius: 20px;
+            }
+            #nav_top .login:hover {
+                background: rgba(44,197,254,0.8);
+            }
+            #wrap .form_login {
+                display:  none;
+                position: fixed;
+                top: 50%;left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                width: 622px;
+                height: 368px;
+                background: #fff;
+            }
+            #wrap .form_login .close {
+                display: block;
+                float: right;
+                height: 30px;
+                width: 30px;
+                cursor: pointer;
+            }
+            #wrap .form_login p {
+                margin: 0 auto;
+                width: 248px;
+                text-align: center;
+                font-size: 16px;
+                color: rgb(102,102,102);
+            }
+            #wrap .form_login p.p1 {
+                margin-top: 14px;
+                font-size: 20px;
+                padding-top: 10px;
+                padding-bottom: 20px;
+                color: #4c4c4c;
+            }
+            #wrap .form_login a {
+                color: #6e83ef;
+            }
+            #wrap .form_login #form_login {
+                margin: 0 auto;
+                width: auto;
+            }
+            #wrap .form_login #form_login .inputOuter {
+                margin: auto;
+                padding-top: 20px;
+                height: 42px;
+                width: 272px;
+            }
+            #wrap .form_login #form_login .inputStyle {
+                width: 258px;
+                position: relative;
+                top: 2px;
+                left: 2px;
+                height: 18px;
+                padding: 10px 0 10px 10px;
+                line-height: 18px;
+                border: none;
+                background: 0 0;
+                color: #333;
+                font-family: Verdana,Tahoma,Arial;
+                font-size: 14px;
+            }
+            #wrap .form_login #form_login .submit {
+                position: relative;
+                margin: auto;
+                margin-top: 20px;
+                width: 272px;
+                height: 42px;
+                border-radius: 4px;
+                background-color: #86ce2f;
+            }
+            #wrap .form_login #form_login .submit .btn_login {
+                position: absolute;
+                top: 0;left: 0;
+                width: 100%;
+                height: 100%;
+            }
+            #wrap .form_login #form_login .submit .btn_login #btn_login {
+                width: 100%;
+                height: 40px;
+                line-height: 35px;
+                border: none;
+                font-size: 17px;
+                font-weight: 400;
+                background: 0 0;
+                color: #fff;
+                cursor: pointer;
+            }
+            #wrap .form_login footer {
+                margin-top: 40px;
+            }
+            #wrap .form_login footer a{
+                float: right;
+                margin-right: 6px;
+                font-size: 12px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <div id="shadow"></div>
+            <nav id="nav_top">
+                <!--<span class="logo">png</span>-->
+                <a class="login" href="javascript:" target="_blank" id="a_login">登录</a>
+            </nav>
+            <div class="form_login" >
+                <span class="close">X</span>
+                <p class="p1">账号密码登录</p>
+                <p class="p2">推荐使用<a href="">快速安全登录</a>，防止盗号</p>
+                <form action="" id="form_login">
+                    <div class="inputOuter">
+                        <input type="text" class="inputStyle account" placeholder="支持QQ号/邮箱/手机号登录">
+                    </div>
+                    <div class="inputOuter">
+                        <label for="pwd"></label>
+                        <input type="text" placeholder="密码" id="pwd" class="inputStyle">
+                    </div>
+                    <div class="submit">
+                        <a href="" class="btn_login">
+                            <input type="submit" value="登录" class="btn" id="btn_login">
+                        </a>
+                    </div>
+                </form>
+                <footer id="ft_inForm">
+                    <a href="">更多</a><a href="">注册账号</a><a href="">忘记密码？</a>
+                </footer>
+            </div>
+        </div>
+
+        <script>
+            //点击登录后弹出登录界面
+            let btn_login= document.getElementById('a_login'),
+                form_login= document.getElementsByClassName('form_login')[0],
+                shadow= document.getElementById("shadow"),
+                btn_close= document.getElementsByClassName("close")[0],
+                inp_account= document.getElementsByClassName('account')[0],
+                inp_pwd= document.getElementById('pwd'),
+                inp_inForm= document.getElementsByClassName("inputStyle");
+
+            let aInp= Array.from(inp_inForm);
+            console.log(aInp);
+            //点击登录按钮后跳出登录框
+            btn_login.onclick= function () {
+                 form_login.style.display= "block";
+                 shadow.style.display= "block";
+            };
+
+            btn_close.onclick= function () {
+                //登录框隐藏  遮罩层消失
+                form_login.style.display= "none";
+                shadow.style.display= "none";
+
+                //inp_inForm是 HtmlCollection对象 如何进行遍历 清空所有input的内容 更加高效？
+                //先通过Array.from 转化成数组再使用 map遍历可行
+                aInp.map(item=> item.value= '')
+                // inp_account.value= '';
+                // inp_pwd.value= '';
+            }
+        </script>
+    </body>
+</html>
